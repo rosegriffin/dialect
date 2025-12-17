@@ -1,0 +1,10 @@
+name: dialect
+channels:
+- conda-forge
+dependencies:
+- python
+- jupyterlab
+- numpy
+- pandas
+- scikit-learn
+- librosa
