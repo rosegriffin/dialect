@@ -2,9 +2,22 @@ name: dialect
 channels:
 - conda-forge
 dependencies:
-- python
-- jupyterlab
+# core
+- python=3.10
 - numpy
-- pandas
 - scikit-learn
+- pandas
+
+# audio
 - librosa
+
+# jupyter
+- jupyterlab
+
+# deps needed by hpelm
+- hdf5
+- pytables
+
+- pip
+- pip:
+    - hpelm
