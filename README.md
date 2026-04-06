@@ -31,6 +31,8 @@ For training and evaluation, only SA1 and SA2 sentences are used since they are 
 - **SA1:** She had your dark suit in greasy wash water all year.
 - **SA2:** Don't ask me to carry an oily rag like that. 
 
+For more information, see the [LDC catalog page.](https://catalog.ldc.upenn.edu/LDC93S1)
+
 
 ## Getting started
 
@@ -52,10 +54,8 @@ conda activate dialect
 1. Download the TIMIT dataset.
 2. Place the dataset in `data/raw`. The directory structure from root should follow TIMIT’s original layout, for example:  
 `data/raw/TIMIT/data/TRAIN/DR1/FCJF0/SA1.WAV`
-4. Run `split_samples.py` to split samples into words/phones:  
-```
-python src/data/split_samples.py`
-```
+4. Run `split_samples.py` to split samples into words:  
+```python -m src.data.split_samples```
 
 This will completely generate the `processed` folder, which will be used by the models.
 
