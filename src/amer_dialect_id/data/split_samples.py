@@ -4,7 +4,7 @@ import argparse
 import soundfile as sf
 from pathlib import Path
 
-from src.config import PROJECT_ROOT, DATA_PROCESSED_ROOT
+from amer_dialect_id.config import PROJECT_ROOT, DATA_PROCESSED_ROOT
 
 DEFAULT_INPUT_DIR = PROJECT_ROOT / "data" / "raw" / "TIMIT"
 OUTPUT_DIR = DATA_PROCESSED_ROOT

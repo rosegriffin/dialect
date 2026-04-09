@@ -3,7 +3,7 @@ import glob
 import pandas as pd
 from pathlib import Path
 
-from src.config import DATA_PROCESSED_ROOT, VALID_LEVELS
+from amer_dialect_id.config import DATA_PROCESSED_ROOT, VALID_LEVELS
 
 def parse_path(path: str) -> dict:
     """

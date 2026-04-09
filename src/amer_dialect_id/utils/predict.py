@@ -2,9 +2,9 @@ import os
 import argparse
 import numpy as np
 
-from src.config import MODEL_DIR
-from src.features.wav2vec_features import Wav2VecFeatureExtractor
-from src.utils.persistence import save_object, load_object
+from amer_dialect_id.config import MODEL_DIR
+from amer_dialect_id.features.wav2vec_features import Wav2VecFeatureExtractor
+from amer_dialect_id.utils.persistence import save_object, load_object
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Predicts dialect for samples.")

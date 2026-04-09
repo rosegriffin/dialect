@@ -2,13 +2,13 @@ import os
 import logging
 from transformers import logging as hf_logging
 
-from src.config import DATA_PROCESSED_ROOT, EMBEDDINGS_DIR, MODEL_DIR
-from src.features.wav2vec_features import Wav2VecFeatureExtractor
-from src.data.make_dataset import make_dataset
-from src.data.preprocess import get_labels, get_split, scale_features
-from src.utils.persistence import save_object, load_object
-from src.models.logistic_regression import train_logistic_regression
-from src.utils.metrics import report_classification
+from amer_dialect_id.config import DATA_PROCESSED_ROOT, EMBEDDINGS_DIR, MODEL_DIR
+from amer_dialect_id.features.wav2vec_features import Wav2VecFeatureExtractor
+from amer_dialect_id.data.make_dataset import make_dataset
+from amer_dialect_id.data.preprocess import get_labels, get_split, scale_features
+from amer_dialect_id.utils.persistence import save_object, load_object
+from amer_dialect_id.models.logistic_regression import train_logistic_regression
+from amer_dialect_id.utils.metrics import report_classification
 
 if __name__=="__main__":
 

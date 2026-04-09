@@ -55,7 +55,7 @@ conda activate dialect
 2. Place the dataset in `data/raw`. The directory structure from root should follow TIMIT’s original layout, for example:  
 `data/raw/TIMIT/data/TRAIN/DR1/FCJF0/SA1.WAV`
 4. Run `split_samples.py` to split samples into words:  
-```python -m src.data.split_samples```
+```python -m amer_dialect_id.data.split_samples```
 
 This will completely generate the `processed` folder, which will be used by the models.
 
@@ -64,15 +64,15 @@ This will completely generate the `processed` folder, which will be used by the 
 
 Train and evaluate a model:
 ```
-python -m src.main
+python -m amer_dialect_id.main
 ```
 
 Get predictions for samples:
 ```
-python -m src.utils.predict -m <model name> -s <paths to samples>
+python -m amer_dialect_id.utils.predict -m <model name> -s <paths to samples>
 ```
 
 For example:
 ```
-python -m src.utils.predict -m wav2vec_lr -s SA1.WAV SA2.WAV
+python -m amer_dialect_id.utils.predict -m wav2vec_lr -s SA1.WAV SA2.WAV
 ```
