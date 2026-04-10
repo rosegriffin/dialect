@@ -22,9 +22,8 @@ def average_predictions(sample_probs):
 
     # Determine final predicted class and confidence
     final_class = int(np.argmax(avg_probs))
-    confidence = float(avg_probs[final_class])
 
-    return final_class, confidence
+    return final_class, avg_probs
 
 def predict_sample(filepath: str, extractor, model, scaler) -> int:
     """
@@ -88,6 +87,15 @@ def label_to_name(label):
 
     return mapping[label]
 
+def format_class_probs(confs):
+    lst = []
+
+    for i, conf in enumerate(confs):
+        lst.append((label_to_name(i), conf))
+
+    lst.sort(key=lambda x: x[1], reverse=True)
+
+    return lst
 
 if __name__=="__main__":
 
@@ -108,6 +116,7 @@ if __name__=="__main__":
     model = load_object(model_path)
     scaler = load_object(scaler_path)
 
-    dialect, conf = predict_batch(sample_paths, extractor, model)
+    dialect, confs = predict_batch(sample_paths, extractor, model)
 
-    print(f'Dialect: {label_to_name(dialect)} | Confidence: {conf:.2f}')
+    print(f'Dialect: {label_to_name(dialect)}\n\nModel confidence by Region:')
+    print('\n'.join(f'{conf[0]}: {conf[1]:.2f}' for conf in format_class_probs(confs)))
